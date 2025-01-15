@@ -17,8 +17,7 @@ fastify.register(userRoutes);
 beforeAll(async () => {
     console.log('MONGODB_URI:', process.env.MONGODB_URI); // بررسی مقدار MONGODB_URI
     console.log('PORT:', process.env.PORT); // بررسی مقدار PORT
-    // const MONGODB_URI = process.env.MONGODB_URI||'mongodb://localhost:27017/userdb';
-    const MONGODB_URI = 'mongodb://localhost:27017/user_management';
+    const MONGODB_URI = process.env.MONGODB_URI||'mongodb://localhost:27017/user_management';
     await mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
     const PORT = process.env.PORT;
     await fastify.listen({ port: PORT, host: '0.0.0.0' });
