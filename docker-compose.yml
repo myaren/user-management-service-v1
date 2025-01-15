@@ -8,7 +8,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-      - DATABASE_URL=mongodb://mongo:27017/user_management
+      - DATABASE_URL=mongodb://172.17.0.2:27017/user_management
     depends_on:
       - mongo
 
