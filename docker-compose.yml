@@ -14,7 +14,7 @@ services:
 
   mongo:
     container_name: mongo
-    image: mongo:latest
+    image: mongo
     ports:
       - "27017:27017"
     volumes:
