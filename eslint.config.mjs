@@ -8,8 +8,8 @@ export default [
     languageOptions: {
       sourceType: "commonjs",
       globals: {
-        ...globals.node, // اضافه کردن متغیرهای全局 Node.js
-        process: "readonly" // تعریف `process` به عنوان یک متغیر全局
+        ...globals.node,
+        process: "readonly"
       }
     }
   },
@@ -17,7 +17,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.node // اضافه کردن متغیرهای全局 Node.js
+        ...globals.node
       }
     }
   },
