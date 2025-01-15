@@ -1,5 +1,5 @@
 # استفاده از تصویر پایه Node.js
-FROM node:18
+FROM node:18.20.5
 
 # تنظیم دایرکتوری کار
 WORKDIR /app
