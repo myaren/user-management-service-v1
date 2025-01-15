@@ -1,0 +1,27 @@
+const fastify = require('fastify');
+const User = require('../models/User');
+
+module.exports = async (fastify) => {
+    fastify.post('/users', async (request, reply) => {
+        const { name, age, email } = request.body;
+        try {
+            const user = new User({ name, age, email });
+            await user.save();
+            return { message: 'User created', user };
+        } catch (err) {
+            if (err.code === 11000) {
+                return reply.status(400).send({ message: 'Email already exists' });
+            }
+            throw err;
+        }
+    });
+
+    fastify.get('/users', async (request, reply) => {
+        const { name, age } = request.query;
+        const filter = {};
+        if (name) filter.name = new RegExp(name, 'i');
+        if (age) filter.age = age;
+        const users = await User.find(filter);
+        return users;
+    });
+};

@@ -1,0 +1,47 @@
+# فایل‌های حساس
+#.env
+#.env.local
+#.env.development
+#.env.production
+
+# پوشه‌های وابستگی
+node_modules/
+
+# لاگ‌ها و گزارشات
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# پوشه‌های مربوط به IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# فایل‌های سیستم عامل
+.DS_Store
+Thumbs.db
+
+# فایل‌های تولید شده توسط بیلد
+dist/
+build/
+out/
+
+# فایل‌های کش
+.cache/
+
+# تست‌ها و گزارشات coverage
+coverage/
+.nyc_output/
+
+# فایل‌های موقت
+*.tmp
+*.temp
+
+# فایل‌های پیکربندی محلی
+.eslintcache

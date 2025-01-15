@@ -1,0 +1,40 @@
+{
+  "name": "user-management-service",
+  "version": "1.0.0",
+  "main": "src/server.js", // تغییر به مسیر اصلی پروژه
+  "engines": {
+    "node": "16.x", // مشخص کردن نسخه Node.js
+    "npm": "8.x" // مشخص کردن نسخه npm
+  },
+  "scripts": {
+    "start": "node src/server.js", // اجرای پروژه
+    "test": "jest", // اجرای تست‌ها
+    "dev": "nodemon src/server.js", // اجرای در حالت توسعه
+    "lint": "eslint src/server.js", // بررسی lint (اختیاری)
+    "build": "echo 'No build step required'", // مرحله build (اختیاری)
+    "prestart": "npm run lint" // اجرای lint قبل از start (اختیاری)
+  },
+  "keywords": [
+    "user-management",
+    "fastify",
+    "mongoose"
+  ],
+  "author": "MasoudDEV <>",
+  "license": "ISC",
+  "description": "A user management service built with Fastify and MongoDB.",
+  "dependencies": {
+    "fastify": "^4.0.0",
+    "fastify-swagger": "^5.1.1",
+    "mongoose": "^6.0.0",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "nodemon": "^3.0.2",
+    "eslint": "^8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

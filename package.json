@@ -1,0 +1,41 @@
+{
+  "name": "user-management-service",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest",
+    "dev": "nodemon src/server.js",
+    "lint": "eslint src/server.js",
+    "build": "echo 'No build step required'",
+    "prestart": "npm run lint"
+  },
+  "keywords": [
+    "user-management",
+    "fastify",
+    "mongoose"
+  ],
+  "author": "MasoudDEV <my.arennew.co@gmail.com>",
+  "license": "ISC",
+  "description": "A user management service built with Fastify and MongoDB.",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "fastify": "^4.0.0",
+    "fastify-swagger": "^5.1.1",
+    "mongoose": "^6.0.0",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

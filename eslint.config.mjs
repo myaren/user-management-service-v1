@@ -1,0 +1,25 @@
+import globals from "globals";
+import pluginJs from "@eslint/js";
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  {
+    files: ["**/*.js"],
+    languageOptions: {
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node, // اضافه کردن متغیرهای全局 Node.js
+        process: "readonly" // تعریف `process` به عنوان یک متغیر全局
+      }
+    }
+  },
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node // اضافه کردن متغیرهای全局 Node.js
+      }
+    }
+  },
+  pluginJs.configs.recommended
+];
