@@ -9,7 +9,8 @@ const userRoutes = require('./routes/userRoutes');
 mongoose.set('strictQuery', false); // غیرفعال کردن `strictQuery` برای Mongoose 7
 
 // اتصال به MongoDB با استفاده از متغیر محیطی
-const MONGODB_URI = process.env.MONGODB_URI; // فقط از متغیر محیطی استفاده می‌کنیم
+// const MONGODB_URI = process.env.MONGODB_URI||'mongodb://localhost:27017/userdb';
+const MONGODB_URI = 'mongodb://localhost:27017/userdb';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Error connecting to MongoDB: ', err));
